@@ -6,3 +6,7 @@ Set up a local database with the [prepared SQL script](https://szitnik.github.io
 Open the Jupyter Notebook - crawler.ipynb.
 
 Run all cells - the last one will start the crawler - make sure to update the IP address to your local database (or any function call with the argument "conn" to disable pushing data to a database) 
+
+# DATABASE:
+
+Due to limitations imposed on file size, we could not upload our database directly to our repository. [It is available here.](https://drive.google.com/file/d/1nqQFMP7frWSdFk3bVOvd_C7EjW2tkTUM/view?usp=sharing)
