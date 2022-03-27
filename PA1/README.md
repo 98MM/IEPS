@@ -9,4 +9,4 @@ Run all cells - the last one will start the crawler - make sure to update the IP
 
 # DATABASE:
 
-Due to limitations imposed on file size, we could not upload our database directly to our repository. [It is available here.](https://drive.google.com/file/d/1nqQFMP7frWSdFk3bVOvd_C7EjW2tkTUM/view?usp=sharing)
+Due to limitations imposed on file size, we uploaded the database with lfs. [It is also available here.](https://drive.google.com/file/d/1nqQFMP7frWSdFk3bVOvd_C7EjW2tkTUM/view?usp=sharing)
