@@ -8,4 +8,4 @@ This is an updated version of our crawler which requires three text files to run
 
 # DATABASE:
 
-Due to limitations imposed on file size, we uploaded the database with lfs. [It is also available here.](https://drive.google.com/drive/folders/1c15MP7ouNpXH9acF17XbodDHNpdBRbpU?usp=sharing)
+Due to limitations imposed on file size, we uploaded the database to Google Drive. [It is available here.](https://drive.google.com/drive/folders/1c15MP7ouNpXH9acF17XbodDHNpdBRbpU?usp=sharing)
