@@ -139,7 +139,7 @@ def webrunner(path1, path2, index):
     web1.removeSimilarBlocks(web2)
     formatt = web1.createFormat()
     out = os.path.dirname(__file__)
-    out = os.path.join(out, f'stran{index}.txt')
+    out = os.path.join(out, f'webStemmer_webPage{index}.txt')
     with open(out, "w") as f:
         f.write(formatt)
 

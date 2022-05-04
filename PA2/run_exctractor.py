@@ -4,7 +4,6 @@ from webStemmer import start_stemmer
 
 type = sys.argv[1]
 
-
 if type == "A":
     print(f"Selected exctractor is {type}")
 elif type == "B":
