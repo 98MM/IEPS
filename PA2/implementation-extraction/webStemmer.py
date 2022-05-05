@@ -142,9 +142,9 @@ def webrunner(path1, path2, index):
     dirname = os.path.dirname(__file__)
     
     out = os.path.join(dirname, 'output-extraction')
-    print("BBBBBBBBBBBBBBBBBBB", out)
+    #print("BBBBBBBBBBBBBBBBBBB", out)
     out = os.path.join(out, f'webStemmer_webPage{index}.txt')
-    print(out)
+    #print(out)
     with open(out, "w") as f:
         f.write(formatt)
 
