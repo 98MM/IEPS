@@ -150,22 +150,22 @@ def start_stemmer():
     print("-----------------\n")
 
     webrunner(
-        os.path.join(dirname, 'WebPages/overstock.com/jewelry01.html'),
-        os.path.join(dirname, 'WebPages/overstock.com/jewelry02.html'),
+        os.path.join(dirname, 'input-extraction/overstock.com/jewelry01.html'),
+        os.path.join(dirname, 'input-extraction/overstock.com/jewelry02.html'),
         0
     )
     print("page2")
     print("-----------------\n")
     webrunner(
-        os.path.join(dirname, 'WebPages/rtvslo.si/Audi A6 50 TDI quattro_ nemir v premijskem razredu - RTVSLO.si.html'),
+        os.path.join(dirname, 'input-extraction/rtvslo.si/Audi A6 50 TDI quattro_ nemir v premijskem razredu - RTVSLO.si.html'),
         os.path.join(dirname,
-                     'WebPages/rtvslo.si/Volvo XC 40 D4 AWD momentum_ suvereno med najboljs╠îe v razredu - RTVSLO.si.html'),
+                     'input-extraction/rtvslo.si/Volvo XC 40 D4 AWD momentum_ suvereno med najboljs╠îe v razredu - RTVSLO.si.html'),
         1
     )
     print("page3")
     print("-----------------\n")
     webrunner(
-        os.path.join(dirname, 'WebPages/zurnal/Bliža se konec subvencij za električne avtomobile Žurnal24.htm'),
-        os.path.join(dirname, 'WebPages/zurnal/Dars Vse po starem ali celo huje Žurnal24.htm'),
+        os.path.join(dirname, 'input-extraction/zurnal/Bliža se konec subvencij za električne avtomobile Žurnal24.htm'),
+        os.path.join(dirname, 'input-extraction/zurnal/Dars Vse po starem ali celo huje Žurnal24.htm'),
         2
     )
