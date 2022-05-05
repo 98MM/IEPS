@@ -1,0 +1,242 @@
+1651763637525	geckodriver	INFO	Listening on 127.0.0.1:10940
+1651763640591	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "10941" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofileeQt2tT"
+1651763640915	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofileeQt2tT\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:10941/devtools/browser/10711423-a40d-43d3-a689-174f0a59b453
+1651763642381	Marionette	INFO	Listening on port 10962
+Read port: 10962
+1651763642414	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Audi%20A6%2050%20TDI%20quattro_%20nemir%20v%20premijskem%20razredu%20-%20RTVSLO.si_files/saved_resource, line 1: ReferenceError: _adform_cb_1554297937528_7242427686076167 is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Audi%20A6%2050%20TDI%20quattro_%20nemir%20v%20premijskem%20razredu%20-%20RTVSLO.si_files/rtvslo.js, line 1: TypeError: window.ipromNS is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Audi%20A6%2050%20TDI%20quattro_%20nemir%20v%20premijskem%20razredu%20-%20RTVSLO.si_files/getFilter, line 1: ReferenceError: ipromNS is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Audi%20A6%2050%20TDI%20quattro_%20nemir%20v%20premijskem%20razredu%20-%20RTVSLO.si_files/SiteEvent.dotmetrics, line 1: ReferenceError: DotMetricsObj is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Audi%20A6%2050%20TDI%20quattro_%20nemir%20v%20premijskem%20razredu%20-%20RTVSLO.si_files/SiteEvent(1).dotmetrics, line 1: ReferenceError: DotMetricsObj is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Audi%20A6%2050%20TDI%20quattro_%20nemir%20v%20premijskem%20razredu%20-%20RTVSLO.si_files/script.v57.js, line 17: ReferenceError: DotMetricsSettings is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Audi%20A6%2050%20TDI%20quattro_%20nemir%20v%20premijskem%20razredu%20-%20RTVSLO.si_files/d_vbiawPdxB.html, line 3: SecurityError: The operation is insecure.
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Audi%20A6%2050%20TDI%20quattro_%20nemir%20v%20premijskem%20razredu%20-%20RTVSLO.si_files/remote.js, line 483: ReferenceError: _yt_player is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Audi%20A6%2050%20TDI%20quattro_%20nemir%20v%20premijskem%20razredu%20-%20RTVSLO.si_files/PugMaster, line 1: TypeError: PubMatic.PugMasterCallback is not a function
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Audi%20A6%2050%20TDI%20quattro_%20nemir%20v%20premijskem%20razredu%20-%20RTVSLO.si.html line 2 > injectedScript, line 3: ReferenceError: Criteo is not defined
+1651763643803	Marionette	INFO	Stopped listening on port 10962
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+1651763644551	geckodriver	INFO	Listening on 127.0.0.1:11035
+1651763647626	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "11036" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofilet7v59L"
+1651763647936	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofilet7v59L\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:11036/devtools/browser/e738e38d-a150-4da8-b951-d2c96a4465cb
+1651763649478	Marionette	INFO	Listening on port 11068
+Read port: 11068
+1651763649532	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Volvo%20XC%2040%20D4%20AWD%20momentum_%20suvereno%20med%20najboljs%CC%8Ce%20v%20razredu%20-%20RTVSLO.si_files/saved_resource, line 1: ReferenceError: _adform_cb_1554297931198_0038747859214833813 is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Volvo%20XC%2040%20D4%20AWD%20momentum_%20suvereno%20med%20najboljs%CC%8Ce%20v%20razredu%20-%20RTVSLO.si_files/rtvslo.js, line 1: TypeError: window.ipromNS is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Volvo%20XC%2040%20D4%20AWD%20momentum_%20suvereno%20med%20najboljs%CC%8Ce%20v%20razredu%20-%20RTVSLO.si_files/getFilter, line 1: ReferenceError: ipromNS is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Volvo%20XC%2040%20D4%20AWD%20momentum_%20suvereno%20med%20najboljs%CC%8Ce%20v%20razredu%20-%20RTVSLO.si_files/SiteEvent.dotmetrics, line 1: ReferenceError: DotMetricsObj is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Volvo%20XC%2040%20D4%20AWD%20momentum_%20suvereno%20med%20najboljs%CC%8Ce%20v%20razredu%20-%20RTVSLO.si_files/script.v57.js, line 17: ReferenceError: DotMetricsSettings is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Volvo%20XC%2040%20D4%20AWD%20momentum_%20suvereno%20med%20najboljs%CC%8Ce%20v%20razredu%20-%20RTVSLO.si_files/script.v57.js, line 17: ReferenceError: DotMetricsSettings is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Volvo%20XC%2040%20D4%20AWD%20momentum_%20suvereno%20med%20najboljs%CC%8Ce%20v%20razredu%20-%20RTVSLO.si_files/d_vbiawPdxB.html, line 3: SecurityError: The operation is insecure.
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Volvo%20XC%2040%20D4%20AWD%20momentum_%20suvereno%20med%20najboljs%CC%8Ce%20v%20razredu%20-%20RTVSLO.si_files/remote.js, line 483: ReferenceError: _yt_player is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Volvo%20XC%2040%20D4%20AWD%20momentum_%20suvereno%20med%20najboljs%CC%8Ce%20v%20razredu%20-%20RTVSLO.si_files/PugMaster, line 1: TypeError: PubMatic.PugMasterCallback is not a function
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Volvo%20XC%2040%20D4%20AWD%20momentum_%20suvereno%20med%20najboljs%CC%8Ce%20v%20razredu%20-%20RTVSLO.si.html line 2 > injectedScript, line 3: ReferenceError: Criteo is not defined
+1651763651389	Marionette	INFO	Stopped listening on port 11068
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+[Parent 18072, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1651763652149	geckodriver	INFO	Listening on 127.0.0.1:11152
+1651763655232	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "11153" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofilei0LKWa"
+1651763655543	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofilei0LKWa\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:11153/devtools/browser/73d269f7-56d5-4742-890b-1ef074f8a820
+1651763656960	Marionette	INFO	Listening on port 11186
+Read port: 11186
+1651763657018	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1651763657239	Marionette	INFO	Stopped listening on port 11186
+
+###!!! [Child][PContentChild] Error: Send(msgname=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
+
+1651763657993	geckodriver	INFO	Listening on 127.0.0.1:11195
+1651763661074	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "11196" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofileQJX4LZ"
+1651763661360	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofileQJX4LZ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:11196/devtools/browser/0147a19a-627d-4997-a9bb-53078aebae95
+1651763662687	Marionette	INFO	Listening on port 11219
+Read port: 11219
+1651763662749	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1651763662932	Marionette	INFO	Stopped listening on port 11219
+
+###!!! [Child][PContentChild] Error: Send(msgname=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
+
+1651763663575	geckodriver	INFO	Listening on 127.0.0.1:11227
+1651763666640	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "11228" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofileBJDudv"
+1651763666907	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofileBJDudv\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:11228/devtools/browser/786d30ea-e146-456b-8392-5786403a6ff2
+1651763668256	Marionette	INFO	Listening on port 11253
+Read port: 11253
+1651763668307	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/projectagora.js, line 4: TypeError: i is null
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/loader_004.js, line 152: TypeError: b is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/GetBaseScript.js, line 637: TypeError: category is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/8F3AD6BF2257DDBDCCAE589DDE05C16F.js, line 1: TypeError: name_jureferlez_lnl_pageplugin_LNLPagePlugin.onScriptDownloaded is not a function
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/SiteEvent.dotmetrics, line 1: ReferenceError: DotMetricsObj is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/beacon.js, line 1: ReferenceError: webpackJsonpppg__name_ is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/push.js, line 1: ReferenceError: webpackJsonpppg__name_ is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/AGSKWxWxHhSU0-kM82pKJswG0yHqPJqJrzMycq-_N0glUwDeuH1mPiXBKarKH3xN, line 181: Error: I`file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24.htm
+JavaScript error: http://bin.livenetlife.com/GetBaseScript.aspx?ETag=-1345397002&CodeId=beffe6ff-77d7-403a-8473-fd95201aa1e5, line 637: TypeError: category is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/boot, line 31: TypeError: cx.cx_id is undefined
+JavaScript error: https://bin.livenetlife.com/GetBaseScript.aspx?ETag=-1345397002&CodeId=beffe6ff-77d7-403a-8473-fd95201aa1e5, line 637: TypeError: category is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/a_data_003/recaptcha__en.js, line 72: Error: reCAPTCHA placeholder element must be empty
+JavaScript error: https://www.gstatic.com/recaptcha/releases/2W_gRz39xX8G13fM-OdyQPlc/recaptcha__en.js, line 72: Error: reCAPTCHA placeholder element must be empty
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/parse.js, line 166: TypeError: data[i] is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/script.js, line 133: TypeError: this.SettingsObject is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/AGSKWxUgpntsjVm8oxXuNAge2QaQm9V85TlNn0g8Iy8Syk9d5wdDgt3HOETgUmNo, line 258: Error: T`file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24.htm
+1651763669617	Marionette	INFO	Stopped listening on port 11253
+JavaScript error: resource://gre/modules/TerminatorTelemetry.jsm, line 71: AbortError: IOUtils: Shutting down and refusing additional I/O tasks
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+1651763670336	geckodriver	INFO	Listening on 127.0.0.1:11325
+1651763673376	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "11326" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofiletSVwCX"
+1651763673662	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofiletSVwCX\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:11326/devtools/browser/cb10a1f2-bf26-43c5-8316-01e55ee4cd65
+1651763675222	Marionette	INFO	Listening on port 11351
+Read port: 11351
+1651763675278	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/projectagora.js, line 4: TypeError: i is null
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/loader_004.js, line 152: TypeError: b is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/GetBaseScript.js, line 637: TypeError: category is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/8F3AD6BF2257DDBDCCAE589DDE05C16F.js, line 1: TypeError: name_jureferlez_lnl_pageplugin_LNLPagePlugin.onScriptDownloaded is not a function
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/SiteEvent.dotmetrics, line 1: ReferenceError: DotMetricsObj is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/Ping_003.dotmetrics, line 1: ReferenceError: DotMetricsObj is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/Ping_002.dotmetrics, line 1: ReferenceError: DotMetricsObj is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/Ping.dotmetrics, line 1: ReferenceError: DotMetricsObj is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/beacon.js, line 1: ReferenceError: webpackJsonpppg__name_ is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/push.js, line 1: ReferenceError: webpackJsonpppg__name_ is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/AGSKWxUtB9YoWF5tAmJAinpZ9KQtsxM_tuYa5B3eEfBcXgJRSs1n3m5Nks7wazuc, line 181: Error: I`file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24.htm
+JavaScript error: https://bin.livenetlife.com/GetBaseScript.aspx?ETag=-1345397002&CodeId=beffe6ff-77d7-403a-8473-fd95201aa1e5, line 637: TypeError: category is undefined
+JavaScript error: http://bin.livenetlife.com/GetBaseScript.aspx?ETag=-1345397002&CodeId=beffe6ff-77d7-403a-8473-fd95201aa1e5, line 637: TypeError: category is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/boot, line 31: TypeError: cx.cx_id is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/a_data_002/recaptcha__en.js, line 72: Error: reCAPTCHA placeholder element must be empty
+JavaScript error: https://www.gstatic.com/recaptcha/releases/2W_gRz39xX8G13fM-OdyQPlc/recaptcha__en.js, line 72: Error: reCAPTCHA placeholder element must be empty
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/parse.js, line 166: TypeError: data[i] is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/script_002.js, line 133: TypeError: this.SettingsObject is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/AGSKWxUgpntsjVm8oxXuNAge2QaQm9V85TlNn0g8Iy8Syk9d5wdDgt3HOETgUmNo, line 258: Error: T`file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24.htm
+1651763676833	Marionette	INFO	Stopped listening on port 11351
+1651764005045	geckodriver	INFO	Listening on 127.0.0.1:11746
+1651764008094	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "11747" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofileaERwyw"
+1651764008368	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofileaERwyw\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:11747/devtools/browser/f2cdc08a-caa3-4281-a5a0-35d998bdbec4
+1651764010072	Marionette	INFO	Listening on port 11777
+Read port: 11777
+1651764010103	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Audi%20A6%2050%20TDI%20quattro_%20nemir%20v%20premijskem%20razredu%20-%20RTVSLO.si_files/saved_resource, line 1: ReferenceError: _adform_cb_1554297937528_7242427686076167 is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Audi%20A6%2050%20TDI%20quattro_%20nemir%20v%20premijskem%20razredu%20-%20RTVSLO.si_files/rtvslo.js, line 1: TypeError: window.ipromNS is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Audi%20A6%2050%20TDI%20quattro_%20nemir%20v%20premijskem%20razredu%20-%20RTVSLO.si_files/getFilter, line 1: ReferenceError: ipromNS is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Audi%20A6%2050%20TDI%20quattro_%20nemir%20v%20premijskem%20razredu%20-%20RTVSLO.si_files/SiteEvent.dotmetrics, line 1: ReferenceError: DotMetricsObj is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Audi%20A6%2050%20TDI%20quattro_%20nemir%20v%20premijskem%20razredu%20-%20RTVSLO.si_files/SiteEvent(1).dotmetrics, line 1: ReferenceError: DotMetricsObj is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Audi%20A6%2050%20TDI%20quattro_%20nemir%20v%20premijskem%20razredu%20-%20RTVSLO.si_files/script.v57.js, line 17: ReferenceError: DotMetricsSettings is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Audi%20A6%2050%20TDI%20quattro_%20nemir%20v%20premijskem%20razredu%20-%20RTVSLO.si_files/d_vbiawPdxB.html, line 3: SecurityError: The operation is insecure.
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Audi%20A6%2050%20TDI%20quattro_%20nemir%20v%20premijskem%20razredu%20-%20RTVSLO.si_files/remote.js, line 483: ReferenceError: _yt_player is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Audi%20A6%2050%20TDI%20quattro_%20nemir%20v%20premijskem%20razredu%20-%20RTVSLO.si_files/PugMaster, line 1: TypeError: PubMatic.PugMasterCallback is not a function
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Audi%20A6%2050%20TDI%20quattro_%20nemir%20v%20premijskem%20razredu%20-%20RTVSLO.si.html line 2 > injectedScript, line 3: ReferenceError: Criteo is not defined
+1651764011347	Marionette	INFO	Stopped listening on port 11777
+1651764012062	geckodriver	INFO	Listening on 127.0.0.1:11837
+1651764015132	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "11838" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofilevAEub7"
+1651764015407	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofilevAEub7\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:11838/devtools/browser/960b7a61-e388-4249-828b-55d61e5d3973
+1651764016778	Marionette	INFO	Listening on port 11869
+Read port: 11869
+1651764016809	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Volvo%20XC%2040%20D4%20AWD%20momentum_%20suvereno%20med%20najboljs%CC%8Ce%20v%20razredu%20-%20RTVSLO.si_files/saved_resource, line 1: ReferenceError: _adform_cb_1554297931198_0038747859214833813 is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Volvo%20XC%2040%20D4%20AWD%20momentum_%20suvereno%20med%20najboljs%CC%8Ce%20v%20razredu%20-%20RTVSLO.si_files/rtvslo.js, line 1: TypeError: window.ipromNS is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Volvo%20XC%2040%20D4%20AWD%20momentum_%20suvereno%20med%20najboljs%CC%8Ce%20v%20razredu%20-%20RTVSLO.si_files/getFilter, line 1: ReferenceError: ipromNS is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Volvo%20XC%2040%20D4%20AWD%20momentum_%20suvereno%20med%20najboljs%CC%8Ce%20v%20razredu%20-%20RTVSLO.si_files/SiteEvent.dotmetrics, line 1: ReferenceError: DotMetricsObj is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Volvo%20XC%2040%20D4%20AWD%20momentum_%20suvereno%20med%20najboljs%CC%8Ce%20v%20razredu%20-%20RTVSLO.si_files/script.v57.js, line 17: ReferenceError: DotMetricsSettings is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Volvo%20XC%2040%20D4%20AWD%20momentum_%20suvereno%20med%20najboljs%CC%8Ce%20v%20razredu%20-%20RTVSLO.si_files/script.v57.js, line 17: ReferenceError: DotMetricsSettings is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Volvo%20XC%2040%20D4%20AWD%20momentum_%20suvereno%20med%20najboljs%CC%8Ce%20v%20razredu%20-%20RTVSLO.si_files/d_vbiawPdxB.html, line 3: SecurityError: The operation is insecure.
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Volvo%20XC%2040%20D4%20AWD%20momentum_%20suvereno%20med%20najboljs%CC%8Ce%20v%20razredu%20-%20RTVSLO.si_files/PugMaster, line 1: TypeError: PubMatic.PugMasterCallback is not a function
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Volvo%20XC%2040%20D4%20AWD%20momentum_%20suvereno%20med%20najboljs%CC%8Ce%20v%20razredu%20-%20RTVSLO.si_files/remote.js, line 483: ReferenceError: _yt_player is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/rtvslo.si/Volvo%20XC%2040%20D4%20AWD%20momentum_%20suvereno%20med%20najboljs%CC%8Ce%20v%20razredu%20-%20RTVSLO.si.html line 2 > injectedScript, line 3: ReferenceError: Criteo is not defined
+JavaScript error: https://si.hit.gemius.pl/gdejs/xgde.js, line 59: SyntaxError: An invalid or illegal string was specified
+JavaScript error: https://si.hit.gemius.pl/gdejs/xgde.js, line 59: SyntaxError: An invalid or illegal string was specified
+JavaScript error: https://si.hit.gemius.pl/gdejs/xgde.js, line 59: SyntaxError: An invalid or illegal string was specified
+JavaScript error: https://si.hit.gemius.pl/gdejs/xgde.js, line 59: SyntaxError: An invalid or illegal string was specified
+1651764040448	Marionette	INFO	Stopped listening on port 11869
+1651764041137	geckodriver	INFO	Listening on 127.0.0.1:11967
+1651764044200	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "11968" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofileWXTRsf"
+1651764044473	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofileWXTRsf\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:11968/devtools/browser/74e04d82-678c-4fdc-af53-b42f7ad90c13
+1651764045804	Marionette	INFO	Listening on port 11991
+Read port: 11991
+1651764045886	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1651764046188	Marionette	INFO	Stopped listening on port 11991
+1651764046918	geckodriver	INFO	Listening on 127.0.0.1:12000
+1651764049976	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "12001" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofile40zcZ2"
+1651764050261	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofile40zcZ2\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:12001/devtools/browser/0333e611-8d14-4599-9c3e-d9eedeb66a46
+1651764051621	Marionette	INFO	Listening on port 12022
+Read port: 12022
+1651764051656	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1651764051846	Marionette	INFO	Stopped listening on port 12022
+
+###!!! [Child][PContentChild] Error: Send(msgname=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
+
+1651764052592	geckodriver	INFO	Listening on 127.0.0.1:12032
+1651764055669	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "12033" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofileWjmcdV"
+1651764055951	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofileWjmcdV\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:12033/devtools/browser/eec5966a-6f3f-407f-8092-dd356675ae37
+1651764057315	Marionette	INFO	Listening on port 12057
+Read port: 12057
+1651764057349	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/projectagora.js, line 4: TypeError: i is null
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/loader_004.js, line 152: TypeError: b is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/GetBaseScript.js, line 637: TypeError: category is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/8F3AD6BF2257DDBDCCAE589DDE05C16F.js, line 1: TypeError: name_jureferlez_lnl_pageplugin_LNLPagePlugin.onScriptDownloaded is not a function
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/SiteEvent.dotmetrics, line 1: ReferenceError: DotMetricsObj is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/beacon.js, line 1: ReferenceError: webpackJsonpppg__name_ is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/push.js, line 1: ReferenceError: webpackJsonpppg__name_ is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/AGSKWxWxHhSU0-kM82pKJswG0yHqPJqJrzMycq-_N0glUwDeuH1mPiXBKarKH3xN, line 181: Error: I`file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24.htm
+JavaScript error: https://bin.livenetlife.com/GetBaseScript.aspx?ETag=-1345397002&CodeId=beffe6ff-77d7-403a-8473-fd95201aa1e5, line 637: TypeError: category is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/boot, line 31: TypeError: cx.cx_id is undefined
+JavaScript error: http://bin.livenetlife.com/GetBaseScript.aspx?ETag=-1345397002&CodeId=beffe6ff-77d7-403a-8473-fd95201aa1e5, line 637: TypeError: category is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/a_data_003/recaptcha__en.js, line 72: Error: reCAPTCHA placeholder element must be empty
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/script.js, line 133: TypeError: this.SettingsObject is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/AGSKWxUgpntsjVm8oxXuNAge2QaQm9V85TlNn0g8Iy8Syk9d5wdDgt3HOETgUmNo, line 258: Error: T`file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24.htm
+JavaScript error: https://www.gstatic.com/recaptcha/releases/2W_gRz39xX8G13fM-OdyQPlc/recaptcha__en.js, line 72: Error: reCAPTCHA placeholder element must be empty
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Bli%C5%BEa%20se%20konec%20subvencij%20za%20elektri%C4%8Dne%20avtomobile%20%C5%BDurnal24_files/parse.js, line 166: TypeError: data[i] is undefined
+1651764058696	Marionette	INFO	Stopped listening on port 12057
+JavaScript error: resource://gre/modules/TerminatorTelemetry.jsm, line 71: AbortError: IOUtils: Shutting down and refusing additional I/O tasks
+1651764059408	geckodriver	INFO	Listening on 127.0.0.1:12137
+1651764062459	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "12138" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofileZJJjvC"
+1651764062741	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\miham\\AppData\\Local\\Temp\\rust_mozprofileZJJjvC\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:12138/devtools/browser/96f80eef-86fe-40b8-b3f5-f063ebd15ed0
+1651764064110	Marionette	INFO	Listening on port 12159
+Read port: 12159
+1651764064139	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/projectagora.js, line 4: TypeError: i is null
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/loader_004.js, line 152: TypeError: b is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/GetBaseScript.js, line 637: TypeError: category is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/8F3AD6BF2257DDBDCCAE589DDE05C16F.js, line 1: TypeError: name_jureferlez_lnl_pageplugin_LNLPagePlugin.onScriptDownloaded is not a function
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/SiteEvent.dotmetrics, line 1: ReferenceError: DotMetricsObj is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/Ping_003.dotmetrics, line 1: ReferenceError: DotMetricsObj is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/Ping_002.dotmetrics, line 1: ReferenceError: DotMetricsObj is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/Ping.dotmetrics, line 1: ReferenceError: DotMetricsObj is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/beacon.js, line 1: ReferenceError: webpackJsonpppg__name_ is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/push.js, line 1: ReferenceError: webpackJsonpppg__name_ is not defined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/AGSKWxUtB9YoWF5tAmJAinpZ9KQtsxM_tuYa5B3eEfBcXgJRSs1n3m5Nks7wazuc, line 181: Error: I`file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24.htm
+JavaScript error: https://bin.livenetlife.com/GetBaseScript.aspx?ETag=-1345397002&CodeId=beffe6ff-77d7-403a-8473-fd95201aa1e5, line 637: TypeError: category is undefined
+JavaScript error: http://bin.livenetlife.com/GetBaseScript.aspx?ETag=-1345397002&CodeId=beffe6ff-77d7-403a-8473-fd95201aa1e5, line 637: TypeError: category is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/boot, line 31: TypeError: cx.cx_id is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/a_data_002/recaptcha__en.js, line 72: Error: reCAPTCHA placeholder element must be empty
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/script_002.js, line 133: TypeError: this.SettingsObject is undefined
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/AGSKWxUgpntsjVm8oxXuNAge2QaQm9V85TlNn0g8Iy8Syk9d5wdDgt3HOETgUmNo, line 258: Error: T`file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24.htm
+JavaScript error: https://www.gstatic.com/recaptcha/releases/2W_gRz39xX8G13fM-OdyQPlc/recaptcha__en.js, line 72: Error: reCAPTCHA placeholder element must be empty
+JavaScript error: file:///C:/Users/miham/Documents/GitHub/IESP-1/PA2/input-extraction/zurnal24.si/Dars%20Vse%20po%20starem%20ali%20celo%20huje%20%C5%BDurnal24_files/parse.js, line 166: TypeError: data[i] is undefined
+1651764065544	Marionette	INFO	Stopped listening on port 12159
+[Parent 8868, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167

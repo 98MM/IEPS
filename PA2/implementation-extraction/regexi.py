@@ -218,18 +218,29 @@ def run_regex():
     dirname = os.path.dirname(__file__)
     out = os.path.join(dirname, 'output-extraction')
 
-    f = open(os.path.join(out, f"rtvslo.txt"), "w", encoding='utf8')
-    f.write(json.dumps(rtvslo1, ensure_ascii=False) + '\n' + json.dumps(rtvslo2, ensure_ascii=False))
+    f = open(os.path.join(out, f"rtvslo_regex.json"), "w", encoding='utf8')
+    rtv_out = {
+        "Audi": rtvslo1,
+        "Volvo": rtvslo2
+    }
+    f.write(json.dumps(rtv_out, ensure_ascii=False))
     f.close()
 
-    f = open(os.path.join(out, f"overstock.txt"), "w", encoding='utf8')
-    f.write(json.dumps(overstock1, ensure_ascii=False) + '\n' + json.dumps(overstock2, ensure_ascii=False))
+    f = open(os.path.join(out, f"overstock_regex.json"), "w", encoding='utf8')
+    overstock_out = {
+        "jewelry01": overstock1,
+        "jewelry02": overstock2
+    }
+    f.write(json.dumps(overstock_out, ensure_ascii=False))
     f.close()
 
-    f = open(os.path.join(out, f"zurnal24.txt"), "w", encoding='utf8')
-    f.write(json.dumps(zurnal1, ensure_ascii=False) + '\n' + json.dumps(zurnal2, ensure_ascii=False))
+    f = open(os.path.join(out, f"zurnal24_regex.json"), "w", encoding='utf8')
+    zurnal_out = {
+        "Subvencije": zurnal1,
+        "Dars": zurnal2
+    }
+    f.write(json.dumps(zurnal_out, ensure_ascii=False))
     f.close()
 
     return
 
-run_regex()
