@@ -12,4 +12,5 @@ Libraries used were:
 4. json
 5. pathlib
 6. bs4
-7. Levenshtein
+7. Selenium
+8. Levenshtein
