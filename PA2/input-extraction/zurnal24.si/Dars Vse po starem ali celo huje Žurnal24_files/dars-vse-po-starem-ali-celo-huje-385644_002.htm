@@ -1,0 +1,223 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/javascript">window.lnlCallbackName='LiveNetLife_AdCallback_second';</script><script type="text/javascript">
+
+//what is the callback name?
+var callBackName = window.lnlCallbackName!=null?window.lnlCallbackName:'LiveNetLife_AdCallback';
+//console.log('callBackName:'+callBackName);
+
+//prepare handler
+function newAds(){
+    //debugger;
+    //console.log( "new ads");
+    if (!ads) 
+        return;//nothing to do
+
+    keys = Object.keys(ads);
+    if (keys.length <= 0)
+        return; //nothing to do
+    
+    var Query2CrowdAds = {};
+    var CrowdAd2Queries = {};
+    var isMultiAd = false;
+    var possibleMultiAdMain = null;
+    var index;
+    for (index = 0; index < keys.length; index ++){
+        try {
+            var ad = ads[keys[index]];
+            ad.url = ads[keys[index]].target + ads[keys[index]].UTM;
+            ad.adDescriber = ads[keys[index]].adDesc;
+            ad.title = ads[keys[index]].text;
+            ad.summary = ads[keys[index]].text2;
+            ad.nrVisitors = ads[keys[index]].nrVisitors ? ads[keys[index]].nrVisitors : 0;
+            ad.nrVisitorsInChat = ads[keys[index]].nrVisitorsInChat ? ads[keys[index]].nrVisitorsInChat : 0;
+            ad.similarity = -1;
+            isMultiAd |= ad.isDetail == "true";
+            if (!(ad.isDetail == "true"))
+                possibleMultiAdMain = keys[index];
+            if (ad.CrowdAdUrlRegex.length > 0){
+                //debugger;
+                queries = ad.CrowdAdUrlRegex.split(';');
+                queries.forEach(function(query){
+                    if (query == null || query.length <= 0) 
+                        return;
+                    if (!Query2CrowdAds.hasOwnProperty(query))
+                        Query2CrowdAds[query] = [];
+                    Query2CrowdAds[query].push(keys[index]);
+                   if (!CrowdAd2Queries.hasOwnProperty(keys[index]))
+                        CrowdAd2Queries[keys[index]] = {};
+                    CrowdAd2Queries[keys[index]][query]={nrVisitors:0,nrVisitorsInChat:0};  
+                });
+ 
+            }
+        }
+        catch (eee){}
+    }
+
+    var goodAds = [];
+    if (!isMultiAd){
+        var mrnd = Math.random();
+        var sum = 0;
+        for (index = 0; index < keys.length; index ++){
+            var p = ads[keys[index]].p ? ads[keys[index]].p : 0;
+            sum += ads[keys[index]].p;
+            if (mrnd < sum)
+                break;
+        }
+
+        if (index >= keys.length) //misconfiguration, no ad was selected
+            index = Math.floor(keys.length * Math.random());
+
+        //console.log("index:"+index+" sum:"+sum+" mrnd:"+mrnd);
+
+        //var index = 1;
+
+        try{
+        var i = parseInt(window.top.location.href.match(/lnlAdIndex=([0-9]*)/)[1]);
+        if (i < keys.length)
+            index = i;
+        }
+        catch (eererere){}
+     
+        goodAds.push(keys[index]);
+    }
+    else {
+        if (possibleMultiAdMain == null)
+            throw "Cound not find main creative in LNL ad";
+        goodAds.push(possibleMultiAdMain);
+        for (index = 0; index < keys.length; index ++){
+            if (keys[index] != possibleMultiAdMain)
+                goodAds.push(keys[index]);
+        }
+    }
+  
+    //console.log('We have prepared a list of '+goodAds.length+' creatives, first one is:'+JSON.stringify(ads[goodAds[0]]));
+
+    for (index = 0; index < goodAds.length; index ++){
+        ad = ads[goodAds[index]];
+        if (ad.creativeId == null)
+            ad.creativeId = goodAds[index];
+        if (ad.endDate!=null && (/(counter)/.test(ad.title) || /(counter)/.test(ad.summary))){
+            howManySeconds = Math.floor((new Date(ad.endDate) - new Date())/1000);
+       	    remaining=getRemainingString(howManySeconds);
+            originalTitle = ad.title;
+            originalSummary = ad.summary;
+            ad.title = originalTitle==null?null: originalTitle.replace('(counter)',remaining);
+            ad.summary = originalSummary==null?null: originalSummary.replace('(counter)',remaining);
+            adWithCounter = ad;  
+    	    setInterval(function () {
+               	howManySeconds = Math.floor((new Date(adWithCounter.endDate) - new Date())/1000);
+                remaining=getRemainingString(howManySeconds);
+               	adWithCounter.title = originalTitle==null?null: originalTitle.replace('(counter)',remaining);
+        	adWithCounter.summary = originalSummary==null?null:originalSummary.replace('(counter)',remaining);
+                window.parent[callBackName](adWithCounter);
+                //console.log(remaining + ": " + adWithCounter.title);
+	    }, 1000);
+        }
+
+        window.parent[callBackName](ad);
+    }
+
+    if (Object.keys(Query2CrowdAds).length > 0) {
+	window.LiveNetLife_AutoStart=true;
+        window.LiveNetLife_EnableXMPP=false;
+        window.LiveNetLife_TraceLevel=10;
+        window.LiveNetLife_EnableChat=false;
+        //window.LiveNetLife_ForwardServerProxy='%%CLICK_URL_UNESC%%';
+	window.LiveNetLife_EnableAPI = true; //true;
+	window.LiveNetLife_PageURL='http://ad.livenetlife.com/'+ads[goodAds[0]].liDesc;
+ 	window.LiveNetLife_PageTitle=ads[goodAds[0]].title;
+        window.LiveNetLife_PagePictureUrl=ads[goodAds[0]].image;
+        window.LiveNetLife_UserDefinedContent = 'livenetlife ad';
+
+//        try {
+//            window.LiveNetLife_UserDefinedContent=top.window.LNLParameters.UserDefinedContent;
+//        }
+//        catch (eeerrr) {}
+
+        window.LiveNetLife_EnableLinks=false;
+
+        var goodQueries = {};
+        for (index = 0; index < goodAds.length; index ++){
+            Object.keys(CrowdAd2Queries[goodAds[index]]).forEach(function(query) {
+               goodQueries[query] = 1;
+            });
+        }
+        window.LiveNetLife_AggUrlQueryRegex=Object.keys(goodQueries).join(';');
+
+
+        //console.log('LiveNetLife_AggUrlQueryRegex:'+ LiveNetLife_AggUrlQueryRegex);
+
+        //console.log('LNL Ad: window.LiveNetLife_AggUrlQueryRegex='+window.LiveNetLife_AggUrlQueryRegex);
+
+        window.LNLAPI = {};
+        LNLAPI.doCall = true;
+        LNLAPI.EventHandler = function(eventName, param){
+       	    //console.log("EVENT: "+eventName+': '+(param?JSON.stringify(param.state):""));
+            if (/AggQuery/.test(eventName)){
+                //debugger;
+                if (param && param.state && Query2CrowdAds.hasOwnProperty(param.state.Query) && Query2CrowdAds[param.state.Query].length > 0 ){
+                    for (index = 0; index < Query2CrowdAds[param.state.Query].length; index ++){
+                        adId = Query2CrowdAds[param.state.Query][index];
+                        CrowdAd2Queries[adId][param.state.Query].nrVisitors = param.state.NrUsers;
+                        CrowdAd2Queries[adId][param.state.Query].nrVisitorsInChat = param.state.NrUsersInChat;
+                        totalUsers = 0;
+                        totalUsersInChat = 0;
+                        for (var q in CrowdAd2Queries[adId]){
+                            totalUsers += CrowdAd2Queries[adId][q].nrVisitors;
+                            totalUsersInChat += CrowdAd2Queries[adId][q].nrVisitorsInChat;
+                        }
+                        ad = ads[adId];
+						ad.nrVisitorsInChat = totalUsersInChat;
+						if (totalUsers >= ad.CrowdAdMinUsers){
+							ad.nrVisitors = totalUsers;
+                        } else {
+							ad.nrVisitors = 0;
+		                }
+						window.parent[callBackName](ad);
+						
+                    }
+                    
+                }
+            } 
+       }   
+
+
+       //finally ad livenetlife to this iframe
+       var lnl = document.createElement('script');
+       lnl.type = 'text/javascript';
+       lnl.async = true;
+       lnl.src = (parent.location.protocol == 'https:' ? 'https:' : parent.location.protocol ) +'//bin.livenetlife.com/?CodeId=5dd77848-66e1-4c76-9836-1b291fc89a40&LNLReferer='+encodeURIComponent(window.location.href);
+       lnl.id='LiveNetLife';
+       var s = document.getElementsByTagName('script')[0];
+       s.parentNode.insertBefore(lnl, s);
+    }
+}
+
+function getRemainingString(durationSeconds){
+        temp = durationSeconds;
+        seconds = parseInt(temp % 60, 10);
+        temp -= seconds;
+        temp /=60;
+        
+        minutes = parseInt(temp % 60, 10)
+        temp -= minutes;
+        temp /=60
+        
+        hours = parseInt(temp % 24, 10)
+        temp -= hours;
+        temp /=24
+
+        days = Math.floor(temp);
+
+        //days = days < 10 ? "0" + days : days;
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        return  (days != 0 ? days+'d ':' ') + hours + ':' + minutes + ":" + seconds;
+}
+
+
+</script>
+<script type="text/javascript">window.ads = {"55b99bfd-2727-4549-bd78-f84267d1be99":{"image":"\/\/zem.outbrainimg.com\/p\/srv\/sha\/e6\/11\/b2\/93a204f6b7209a9a742b5b83aa4e597584.jpg?w=300&h=300&fit=crop&crop=center&fm=jpg","imageWidth":"300","imageHeight":"300","imageFocusX":"-1","imageFocusY":"-1","imageFocusR":"-1","text":"Nič več dragega plačevanja za internet in televizijo","text2":"Telekom Slovenije | A1 | Telemach | T-2","textProlog":"","textEpilog":"","UTM":"","target":"https:\/\/adserver.livenetlife.com\/fwd.aspx?q=H4sIAAAAAAAEAI1Sy46jSBD8mvGNlqmnOVgjKIpXAQUFRQGXFoZi2rt222q7u0fz9cte97RSKjIUCmUoU%2flzWo4YnzzvtC4OoIA6CCPPOS304KwHBAhd3JP1vN38%2f2wfdj2%2bPZ%2f3xw84%2fQDrVt%2ff3y9%2fPj%2fepwtAL4%2fzpkxfz9vWlunj4Xw9rHO%2fOY%2fn9GGvznQ5O7O93Jy3z7%2bsAw%2bYILSbLr%2bOz7fr%2fffj9%2fTruvs%2bPux8e192n0fqWQAoWvYu8vCy2L1r6YztHmMXTWQ%2f74GLpwV5r5Nd59N02AO4ILLBdHDhBE6zB9dldcHBInBCJ0t2Z3t0d%2bfrPV2O6%2bpRd5qAQzBYHUROe8fz0OysGFgI8GzRAb26BLuEEEDc3d9HF0IPeB7c757%2fucGH69jP2X35Y6%2fT%2b3N6mW%2fXf9U72PDkvl7OX%2fbdPi%2fn1W6C6yF6wJ63UYog8oBLNxrCsmARHSGJ00TRLAQtwJFWRAdh2YaxX%2fak1EQpYKBBVWGqrvaHPDCyiDBjYydgBdraBMyPOkJZasKS9EoSxsso9buAljKCOqvbIRuzfqxDJEohhqgWpmGlNij3OSiQhhFumhKLDpMs2ZxIElCTIcqMTnJc6bj1eTnkhGVhwWS4Rct0QA2vAA960hU8EQRkzISjhpKqOu%2fiuE9zEXGcMNmyXmZZ1o2BEgxBZnThM6RCkMOwzHpMZcoTycucBwPLOyDHqpWyFn0jlPGBbnKZt4VEMaiR1AwFOpVFC4kfmIwSyJM4HACjo0hinwBFS4YimOQo540Sg%2bykSlOl6yrOGgProewrKYfNK7U%2fDLwuSFIIweuI845WcVJWVECYGqXotmObJiarcgZHMhDZJKkc0wKNUQ4RrYJwCHKjYY1B2g7chGkfa56Dkre4CKIoDSoxpq1OMi5hBFnUVRUOgDGtKaImTAqlBkHKfKSEq17QCsmgqwHifRNmhUm30dQXSYlEgmXUxjWtSt0xE%2fsqGEYyFkOiGCKqjEeAgQlrgWnVF7HO84JmvSl4OIT9WOk2U7yiSdD429v9A0JVngIgBAAA","CrowdAdUrlRegex":"","CrowdAdMinUsers":"0","impressionViewPixelImg":"https%3a%2f%2fadserver.livenetlife.com%2fview.aspx%3fq%3dH4sIAAAAAAAEAI2KS27DMAwFT1PtGEg09VsIXfcUASVRiVs7NiwnDnr6%252bggFHmaAwfvkmqzNMeZWAT16IEsRcvUBWiB0vposMaryv9smLd33fe0fA39gO3ccx%252bX3uT14Qrr08Sz82pdTlbcOry6wLtB33mQGnkYoMi1wf34LDME6IsXTLe33eX33N99mdaQuZXlU9Uw%252bCqKnqg1FW6toI75Y0dYaYqeLRmO5UryytJI5aBwquRMczMCYSxxabQaDEGbK4tQoyahxXr9qai16w4zgLDYglzXESAWaRRnQFqFAV%252bOscc6hM%252bonDYYwBGfdH5oiH0pVAQAA","impressionPixelImg":"https%3a%2f%2fadserver.livenetlife.com%2fimp.aspx%3fq%3dH4sIAAAAAAAEAI2KS27DMAwFT1PtGEgU9VsIXfcUASVRiVs7NmwnDnr6%252bggFHmaAwfvklp0rKZXeAAMGIEcJSgsReiT0oZkiKan6v9sqPd%252f3fdk%252bLH9gP3ccx%252bX3uT54RLpsw1n4tc%252bnGq8bvDaBZYZt51Um4HGAKuMM9%252be3gI3OEykeb3m%252fT8t7e%252fNtUkfepM6Ppp45JEEM1LSh5FoTbSRUJ9o5Q%252bx11WgcN0pXll4LR422kT%252fB0VjGUpPtrRuMQlioiFeDZKOGaflqufcUDDOCd9iBfNGQElXoDsWiq0KRrsY7471Hb1RdpqwvmtRPBhN09Nqhs3%252bZZlVSYAEAAA%253d%253d;https%3a%2f%2fb1t-eudc1.zemanta.com%2ft%2fimp%2fimpression%2fWPYQXQZJZOILML7MJQQI6MBDJQNDCZCM5HWSHRAGV2GZCOLN2NAWEOFTRE4IP2JG67Y54RKOPHAX7BCTXICZVD22ICVLWNQ3EXYFPPFF3MF626GDZRXQNIVYKBGARXT2TJKMDSIYLCDKYQX2YRC75WKX2UDTGMD2V5QDHDTFAG3UA32QDO45JHLZW2FYIROVA7R5QLFPI3EAQ2OIIZ2LUI5BGDL7TXQIHO4BHZIFJDEPGNR3NXXJAIIDIC3TN25IUFMBE77BPBORYRLHBKG5G3G6GTCJ6WAXAYXFICZOBFCPW7X647AFYNUHH27CAAH66UJMAWTOQRA7JEQTCAX7GLG2Z7KUDPI7CMCMPBI%2f%3f;","adDesc":"H4sIAAAAAAAEAK2QMXIDMQhFT4QHIViWlKykE+QCK0uacbP2xPb97SLpMqMi+QUF84D\/EalmdTQgJQUWNqhNVxgr06It1G6WPGVMCzmmjVHRUFIhi0JesiWWf9ihHNko6Mf19rjcb5fjdPTHbAhnwOfXs88YzvDuTKB7P1+PNvXzLfil\/OjPmWofoy9jgGp7fxvjDitrhNFMCMO+hz6NMz2ylhyYTTw6Om5ZM\/m2FCZ3VinpBYLQB0k3AgAA","lineItemId":"55b99bfd-2727-4549-bd78-f84267d1be99","isPrebid":"False","CTA":"Izberi storitev","domainName":"optispin.net"}};window.newAds();</script>
+</head><body data-new-gr-c-s-check-loaded="8.897.0" data-gr-ext-installed=""></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

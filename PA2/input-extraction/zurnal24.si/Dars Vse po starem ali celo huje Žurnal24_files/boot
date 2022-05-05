@@ -1,0 +1,222 @@
+//to-do
+// session mgmt (landing, exit), time-on-page (increasing setTimeouts) - handle leave page event
+'function'==typeof contentExchangeLoad ? contentExchangeLoad() : (function(w,doc) {
+  //do not load in iframes
+  //if (self!=top) return;
+  var cx = w._contentExchange = w._contentExchange || {gdpr:2,tcdata:false},
+      gdpr = cx.gdpr,
+      tcdata = cx.tcdata,
+      purpose = tcdata && tcdata.purpose && tcdata.purpose.consents || [],
+      body = doc.querySelector('body');
+
+  var _callback_widgets = {},
+      perf = (typeof performance !== 'undefined' && typeof performance.now === 'function') || false,
+      uuid = function uuid() {
+        var d = Date.now();
+        if (perf) d += performance.now();
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = (d + Math.random() * 16) % 16 | 0;
+            d = Math.floor(d / 16);
+            return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+        });
+      },
+      guid = function guid() {return Math.random().toString(36).substr(2)},
+      is_frame = self!=top,
+      collector = 'https://collector_sr.contentexchange.me/sl/collect',
+	    checkPageview = function checkPageview() {
+	      if (is_frame || cx.pv) return
+	      cx.pv = uuid()
+	      //settle identities
+	      var gc = '62726d39923bcf6edea5f19b', //empty==anon/bot,'new',ID
+	          lc = cx.cx_id.match(/new|anon/) ? false : cx.cx_id , //local cookie
+	          id = gc || lc  //override local with the merged cookie
+	      if (!id) return console.log('checkPageview: this should not happen',gc,cx)
+	      document.cookie = 'cx_id='+id+';path=/;expires=' + (new Date(+new Date+1E5*720*24*36)).toUTCString()+';SameSite=Strict'
+	      cx.cx_id = id
+        var now = new Date();
+        var pv = {
+          pv: cx.pv,
+          url: cx.url,
+          ref: cx.ref,
+          user_id: id,
+          new: !lc,
+          tz: now.getTimezoneOffset(),
+          cs: doc.characterSet || doc.charset,
+          ns: cx.start,
+          ts: now.getTime(),
+          screen: [ screen.height, screen.width, screen.colorDepth ].join("x")
+        }
+        send('pageview',pv);
+        
+        //setUp a sendBeacon
+        doc.addEventListener('visibilitychange', function logData() {
+          if (doc.visibilityState === 'hidden') {
+            var
+              ts = Date.now(),
+              data = {
+                event:'beacon',
+                pv: cx.pv,
+                ts: ts,
+                ns: cx.start,
+                scroll: w.scrollY,
+                user_id:id, 
+                gdpr: gdpr
+              }
+            if (tcdata && tcdata.gdprApplies) data.gdpr_consent=tcdata.tcString
+            var qs = []
+            Object.keys(data).forEach( function(k) {qs.push( k+'='+encodeURIComponent(data[k]) );} );
+            navigator.sendBeacon(collector+'?'+qs.join('&'));
+          }
+        });
+      },
+      send = function send(ev,data) {
+        var url = collector+'?',
+            qs = ['event='+ev],
+            img = doc.createElement('img');
+        qs.push('gdpr='+gdpr)
+        if (tcdata && tcdata.gdprApplies) qs.push('gdpr_consent='+tcdata.tcString)
+        Object.keys(data).forEach( function(k) {qs.push( k+'='+encodeURIComponent(data[k]) );} );
+        url += qs.join('&');
+        //console.log('sending',qs);
+        img.setAttribute('src',url);
+      }
+
+  this.display_trafex = this.display_contentexchange = function(data) {
+  	var elts = _callback_widgets[data.id][data.tid],
+  	    now = new Date(),
+		    tcstring = '&gdpr='+gdpr;
+		if (tcdata && tcdata.gdprApplies) tcstring += '&gdpr_consent='+tcdata.tcString;
+
+  	elts.widget.queued = false;
+  	if (!data.error) {
+    	elts.widget.setAttribute('done','1');
+    	//TODO - add cx_id to URL
+    	elts.widget.innerHTML = data.data && data.data.replace(/\?cb[0-9]*/i,'?pv='+cx.pv+tcstring) || '';
+    	//add pageview to /in/ links
+    	//send('widget_impression',{pv:cx.pv, widget: data.id, posts: (data.posts || []).join(','), ts: now.getTime()});
+    }
+  	body.removeChild(elts.tunnel);
+  }
+
+  var noMatch = function(options,val) {
+    if (!options) return false //always match if no option==condition to match
+    if (!val) return true //no match if nothin to match to
+    options = options.split(/,/g)
+    for (var k=0;k<options.length;k++) {
+      var opt = options[k],
+          not = opt[0]=='!',
+          expr = not ? opt.substring(1) : opt,
+          m = val.match(new RegExp(expr,'i')),
+          res = not ? !m : m
+      if (res) return false
+    }
+    return true
+  }
+
+  // {{alternatives
+  //    |country=SI,HR; region=dolejnska; city=Ljub,Mar; pos:(!)lat,lng,radius; zip=^1; model=galaxy; device=!desktop; source=gr; widget=widget_id
+  //    |
+  //    }}
+  var noGeoMatch = function(position,lat2,lon2) {
+  // https://www.movable-type.co.uk/scripts/latlong.html - equilateral projection
+    if (!position) return false //no match if no postion specified
+     var pos = position.split(/,/g),
+         p0 = pos[0],
+         not = p0[0]=='!',
+         lat1 = not ? p0.substring(1) : p0,
+         lon1 = pos[1],
+         rad = pos[2],
+         φ1 = lat1 * Math.PI/180,
+         φ2 = lat2 * Math.PI/180,
+         Δλ = (lon2-lon1) * Math.PI/180,
+         R = 6371e3,
+         x = Δλ * Math.cos((φ1+φ2)/2),
+         y = (φ2-φ1),
+         d = Math.sqrt(x*x + y*y) * R;
+    return d<rad ? not : !not
+  }
+  var fetchWidget = function fetchWidget(widget) {
+		var id = widget.getAttribute('data-trafex-widget') || widget.getAttribute('data-contentexchange-widget'),
+        src = widget.getAttribute('data-contentexchange-source'),
+        src_valid = 'si,ug,ughr'.split(',').indexOf(src)>-1,
+		    cat = widget.getAttribute('data-trafex-cat') || widget.getAttribute('data-contentexchange-cat') || '',
+		    cnt = widget.getAttribute('data-trafex-count') || widget.getAttribute('data-contentexchange-count') || '',
+		    country = widget.getAttribute('data-contentexchange-country') || '',
+		    region = widget.getAttribute('data-contentexchange-region') || '',
+		    city = widget.getAttribute('data-contentexchange-city') || '',
+		    zip = widget.getAttribute('data-contentexchange-zip') || '',
+		    pos = widget.getAttribute('data-contentexchange-pos') || '',
+		    asn = widget.getAttribute('data-contentexchange-asn') || '',
+		    model = widget.getAttribute('data-contentexchange-model') || '',
+		    device = widget.getAttribute('data-contentexchange-device') || '',
+		    alternatives = JSON.parse(widget.getAttribute('data-contentexchange-alternatives') || '{}');
+
+    if (noMatch(country,'SI')) return
+    if (noMatch(region,'Ljubljana')) return
+    if (noMatch(city,'Ljubljana')) return
+    if (noMatch(zip,'1501')) return
+    if (noMatch(asn,'Telemach UG d.o.o.')) return
+    if (noMatch(model,'Other')) return
+    if (noMatch(device,'desktop')) return
+    if (noGeoMatch(pos,'46.0517','14.5133')) return
+    if (!src_valid) {
+       //console.log('invalid source',src)
+       src = 'si'
+    }
+
+console.log('ALTERNATIVES',alternatives)
+    for (var k=0;k<alternatives.length;k++) {
+      var alt = alternatives[k]
+      if (noMatch(alt.country,'SI')) continue
+      if (noMatch(alt.region,'Ljubljana')) continue
+      if (noMatch(alt.city,'Ljubljana')) continue
+      if (noMatch(alt.zip,'1501')) continue
+      if (noMatch(alt.asn,'Telemach UG d.o.o.')) continue
+      if (noMatch(alt.model,'Other')) continue
+      if (noMatch(alt.device,'desktop')) continue
+      if (noGeoMatch(alt.pos,'46.0517','14.5133')) continue
+      src = alt.source
+      id = alt.widget
+      cat = alt.cat || ''
+      cnt = alt.cnt || ''
+console.log('chosen alternative',k,src,id,cat,cnt)
+      break
+    }
+
+		if (cat) cat = '/'+cat;
+		if (cnt) cnt = '/'+cnt;
+		var tcstring = (1==gdpr) ? '?gdpr=1&gdpr_consent='+tcdata.tcString : '?gdpr='+gdpr
+  	tunnel = doc.createElement('script');
+  	tunnel.id = guid();
+  	tunnel.type = 'text/javascript';
+    tunnel.src = 'https://tracker_' + src+'.contentexchange.me/widget/'+(id+'-'+tunnel.id)+cat+cnt+tcstring;
+
+    _callback_widgets[id] = _callback_widgets[id] || {};
+    _callback_widgets[id][tunnel.id] = {
+      widget : widget,
+      tunnel: tunnel
+    };
+
+  	body.appendChild(tunnel);
+
+    var refresh = 0 | ( widget.getAttribute('data-trafex-refresh') || widget.getAttribute('data-contentexchange-refresh') );
+    if (refresh) (function(widget,refresh) { setTimeout(function(){fetchWidget(widget)},Math.min(refresh,30)*1000); })(widget,refresh);
+  }
+  this.contentExchangeLoad = function(forceLoad) {
+		var widgets = forceLoad
+		    ? doc.querySelectorAll('[data-trafex-widget],[data-contentexchange-widget]')
+		    : doc.querySelectorAll('[data-trafex-widget]:not([done]),[data-contentexchange-widget]:not([done])');
+		for (var i=0;i< widgets.length;i++) {
+			var widget =  widgets[i];
+			if (widget.queued) continue;
+			widget.queued = true;
+			var delay = 0 | ( widget.getAttribute('data-trafex-delay') || widget.getAttribute('data-contentexchange-delay') );
+			(function(widget,delay) {setTimeout(function() {fetchWidget(widget);},delay*1000);})(widget,delay);
+		}
+	}
+
+  if ( collector && (!tcdata || !tcdata.gdprApplies || purpose[1]) ) checkPageview();
+	contentExchangeLoad();
+  if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", contentExchangeLoad);
+
+})(window,document);
