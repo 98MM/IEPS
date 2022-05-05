@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 from Levenshtein import distance
 from pip import main
 import os
+from pathlib import Path
 
 
 # https://www.unixuser.org/~euske/python/webstemmer/howitworks.html
@@ -138,34 +139,38 @@ def webrunner(path1, path2, index):
 
     web1.removeSimilarBlocks(web2)
     formatt = web1.createFormat()
-    out = os.path.dirname(__file__)
+    dirname = os.path.dirname(__file__)
+    
+    out = os.path.join(dirname, 'output-extraction')
+    print("BBBBBBBBBBBBBBBBBBB", out)
     out = os.path.join(out, f'webStemmer_webPage{index}.txt')
+    print(out)
     with open(out, "w") as f:
         f.write(formatt)
 
 
 def start_stemmer():
     dirname = os.path.dirname(__file__)
+    dirname = str(Path(dirname).parents[0])
     print("page1")
     print("-----------------\n")
 
     webrunner(
-        os.path.join(dirname, 'input-extraction/overstock.com/jewelry01.html'),
-        os.path.join(dirname, 'input-extraction/overstock.com/jewelry02.html'),
+        os.path.join(dirname, 'input-extraction\overstock.com\jewelry01.html'),
+        os.path.join(dirname, 'input-extraction\overstock.com\jewelry02.html'),
         0
     )
     print("page2")
     print("-----------------\n")
     webrunner(
-        os.path.join(dirname, 'input-extraction/rtvslo.si/Audi A6 50 TDI quattro_ nemir v premijskem razredu - RTVSLO.si.html'),
-        os.path.join(dirname,
-                     'input-extraction/rtvslo.si/Volvo XC 40 D4 AWD momentum_ suvereno med najboljs╠îe v razredu - RTVSLO.si.html'),
+        os.path.join(dirname, 'input-extraction\\rtvslo.si\Audi A6 50 TDI quattro_ nemir v premijskem razredu - RTVSLO.si.html'),
+        os.path.join(dirname, 'input-extraction\\rtvslo.si\Volvo XC 40 D4 AWD momentum_ suvereno med najboljše v razredu - RTVSLO.si.html'),
         1
     )
     print("page3")
     print("-----------------\n")
     webrunner(
-        os.path.join(dirname, 'input-extraction/zurnal/Bliža se konec subvencij za električne avtomobile Žurnal24.htm'),
-        os.path.join(dirname, 'input-extraction/zurnal/Dars Vse po starem ali celo huje Žurnal24.htm'),
+        os.path.join(dirname, 'input-extraction\zurnal24.si\Bliža se konec subvencij za električne avtomobile Žurnal24.htm'),
+        os.path.join(dirname, 'input-extraction\zurnal24.si\Dars Vse po starem ali celo huje Žurnal24.htm'),
         2
     )
