@@ -48,6 +48,9 @@ def find_snippets(file, indices):
     path = os.path.join(root, file[0])
     path = os.path.join(path, file[1])
     indices = indices.split(',')
+    indices = [int(i) for i in indices]
+    if len(indices) > 5:
+        indices.sort()
     snips = []
 
     with open(path, encoding="utf8") as f:
@@ -115,7 +118,8 @@ def find_snippets(file, indices):
                 tmp = snips.index(snip)
                 if tmp > 0 and snips[tmp][0] != '.':
                     snips[tmp] = '... ' + snips[tmp]
-
+            if snips[1][0] != '.':
+                snips[1] = '... ' + snips[1]
             snips[-1] += ' ...'
         else:
             for ix in indices:
@@ -156,10 +160,14 @@ def find_snippets(file, indices):
     f.close()
     return snips
 
-
+n_doc = 0
 for row in cursor:
     snips = find_snippets(row[0], row[2])
     snips = ' '.join(snips)
     print(f"{row[1]:<{Fspace}}{row[0]:<{Dspace}}{snips}")
+    n_doc += 1
+
+print("-"*(Fspace+Dspace+Sspace))
+print("Number of documents found:", n_doc)
 
 conn.close()
