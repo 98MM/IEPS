@@ -155,6 +155,9 @@ root = os.path.join(os.path.dirname(__file__), 'PA3-data') # "C:\\Work\\Magister
 stop_words_english = stopwords.words('english')
 
 query=["Sistem","spot"]
+query=["evidenca","nepremičnin"]
+query[0].lower()
+query[1].lower()
 
 print(f'Results  for a query: "{query}"\n')
 
@@ -174,30 +177,34 @@ for subdir, dirs, files in os.walk(root):
                 script.extract()  # remove script tags, style tags
             # get text, tokenize text, and remove stop words
             text = soup.get_text()
-            textO = ' '.join(text.split())
-            textOG=word_tokenize(textO)
-            text = text.lower()
-            tokens = word_tokenize(text)
+            textOG = ' '.join(text.split())
+            textOG.strip()
+            tokensOG=word_tokenize(textOG)
+            #text = text.lower()
+            #tokens = word_tokenize(text)
 
-            tokens = [(idx,t) for idx,t in enumerate(tokens) if not t in stop_words_slovene]
+            tokens = [(idx,t) for idx,t in enumerate(tokensOG) if not t in stop_words_slovene]
             tokens = [t for t in tokens if not t[1] in stop_words_english]
             tokensQuery= [t for t in tokens if t[1] in query]
             frequency=len(tokensQuery)
             indices= [i for i,t in tokensQuery]
+            #if(frequency>0):
+                #snippets.append(find_snippets(textOG,indices))
+                #pass
             if len(indices) > 3:
                 ixs3 = [int(indices[0]), int(indices[int(len(indices) / 2)]), int(indices[-1])]
             else:
                 ixs3=indices
-            #if(frequency>0):
-                #print(find_snippets(textO,indices))
+            ixs3=indices
+
             snippets = []
-            for iter,i in enumerate(ixs3):
+            for iter,i in enumerate(indices):
                 begin = max(i - 3,0)
                 end = i + 3
-                dolz=len(textOG)
+                dolz=len(tokensOG)
                 if end >= dolz:
                     end = dolz - 1
-                snipp = textOG[begin:end]
+                snipp = tokensOG[begin:end]
                 if(iter==0):
                     snipp = " ".join(snipp)
                     snipp = f"{snipp}..."
@@ -237,7 +244,8 @@ print(begin,"\n","-" * (Fspace + Dspace * nsnipets +Sspace))
 #print("here",candidates[0][2])
 for i in range(len(candidates)):
     line=str(candidates[i][0])+" "+str(candidates[i][1]) + str(candidates[i][2])
-
-    #line = f"{candidates[i][0]:<{Fspace}}{candidates[i][1]:{Dspace}}{candidates[i][2]}"
-    #line += f"{candidates[i][2]:<{Sspace}}"
+    # line = f"{candidates[i][0]:<{Fspace}}{candidates[i][1]:{Dspace}}"
+    # for j in range(len(candidates[i][2])):
+    #     line += f"{candidates[i][2][j]:<{Sspace}}"
+    # print(line)
     print("to",line)
