@@ -2,6 +2,7 @@ import sqlite3
 import sys
 import time
 import os
+import string
 from _ast import Is
 
 from bs4 import BeautifulSoup
@@ -17,6 +18,7 @@ query_string = ' '.join(query)
 print(f'Results  for a query: "{query_string}"\n')
 for i in range(len(query)):
     query[i] = query[i].lower()
+    query[i] = query[i].translate(str.maketrans('', '', string.punctuation))
 #print('Query list:', query)
 conn = sqlite3.connect('inverted-index.db')
 c = conn.cursor()
