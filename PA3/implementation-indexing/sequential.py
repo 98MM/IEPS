@@ -154,14 +154,16 @@ def find_snippets(txt, indices):
 root = os.path.join(os.path.dirname(__file__), 'PA3-data') # "C:\\Work\\Magisterij_1_leto\\2.semester\\ekstrakcijaSplet\\nal3\\PA3-data"
 stop_words_english = stopwords.words('english')
 
-query=["evidenca","nepremičnin"]
+query=["Sistem","spot"]
 
 print(f'Results  for a query: "{query}"\n')
 
 candidates=[]
 start_time = time.time()
+stej=0
 for subdir, dirs, files in os.walk(root):
     for file in files:
+        stej+=1
         path = os.path.join(subdir, file)
         domain = os.path.basename(os.path.normpath(subdir))
         docName=path.split("\\")[-1] #names of documents
@@ -184,6 +186,8 @@ for subdir, dirs, files in os.walk(root):
             indices= [i for i,t in tokensQuery]
             if len(indices) > 3:
                 ixs3 = [int(indices[0]), int(indices[int(len(indices) / 2)]), int(indices[-1])]
+            else:
+                ixs3=indices
             #if(frequency>0):
                 #print(find_snippets(textO,indices))
             snippets = []
@@ -213,9 +217,10 @@ for subdir, dirs, files in os.walk(root):
 
 
 endTime=time.time()-start_time
+print(stej)
 print(f"Found query in {len(candidates)} pages")
 print("Result found in {:0.2f} s\n".format(endTime))
-nsnipets=2
+nsnipets=3
 Fspace=13
 Dspace=40
 Sspace=50
@@ -228,10 +233,11 @@ print(begin,"\n","-" * (Fspace + Dspace * nsnipets +Sspace))
 #labels = f"{'Frequencies':<{Fspace}}{'Document':<{Dspace}}{'Snippet':<{Sspace}}\n{'-----------':<{Fspace}}{'-'*41} {'-'*59}"
 #print(labels)
 
-X=candidates[0][0]
-frekvence=[4,9]
+
+#print("here",candidates[0][2])
 for i in range(len(candidates)):
-    line = f"{candidates[i][0]:<{Fspace}}{candidates[i][1]:{Dspace}}"
-    for j in range(len(candidates[i][2])):
-        line+=f"{candidates[i][2][j]:<{Sspace}}"
-    print(line)
+    line=str(candidates[i][0])+" "+str(candidates[i][1]) + str(candidates[i][2])
+
+    #line = f"{candidates[i][0]:<{Fspace}}{candidates[i][1]:{Dspace}}{candidates[i][2]}"
+    #line += f"{candidates[i][2]:<{Sspace}}"
+    print("to",line)
