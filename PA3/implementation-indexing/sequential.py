@@ -1,6 +1,7 @@
 import os
 import sys
 import time
+import string
 import nltk
 from bs4 import BeautifulSoup
 from nltk.corpus import stopwords
