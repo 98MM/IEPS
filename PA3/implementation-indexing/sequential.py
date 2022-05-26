@@ -154,8 +154,8 @@ def find_snippets(txt, indices):
 root = os.path.join(os.path.dirname(__file__), 'PA3-data') # "C:\\Work\\Magisterij_1_leto\\2.semester\\ekstrakcijaSplet\\nal3\\PA3-data"
 stop_words_english = stopwords.words('english')
 
-query=["Sistem","spot"]
-query=["evidenca","nepremičnin"]
+query=["evidenca"]
+query=["sistem","spot"]
 query[0].lower()
 query[1].lower()
 
@@ -170,7 +170,7 @@ for subdir, dirs, files in os.walk(root):
         path = os.path.join(subdir, file)
         domain = os.path.basename(os.path.normpath(subdir))
         docName=path.split("\\")[-1] #names of documents
-
+        frequency=0
         with open(path, encoding='utf8') as fp:
             soup = BeautifulSoup(fp, 'html.parser')
             for script in soup(["script", "style"]):
@@ -178,13 +178,17 @@ for subdir, dirs, files in os.walk(root):
             # get text, tokenize text, and remove stop words
             text = soup.get_text()
             textOG = ' '.join(text.split())
-            textOG.strip()
             tokensOG=word_tokenize(textOG)
+
             #text = text.lower()
             #tokens = word_tokenize(text)
 
-            tokens = [(idx,t) for idx,t in enumerate(tokensOG) if not t in stop_words_slovene]
-            tokens = [t for t in tokens if not t[1] in stop_words_english]
+            tokens = [(idx,token.lower()) for idx,token in enumerate(tokensOG) if not token in (stop_words_slovene or stop_words_english)]
+            #tokens = [t for t in tokens if not t[1] in stop_words_english]
+            # for token in tokens:
+            #     if token in query:
+            #         frequency+=1
+
             tokensQuery= [t for t in tokens if t[1] in query]
             frequency=len(tokensQuery)
             indices= [i for i,t in tokensQuery]
@@ -215,12 +219,9 @@ for subdir, dirs, files in os.walk(root):
                     snipp = " ".join(snipp)
                     snipp = f"..{snipp}..."
                 snippets.append(snipp)
-                #print(snipp)
-
-
             if(frequency>0):
                 candidates.append([frequency,docName,snippets])
-        fp.close()
+            fp.close()
 
 
 endTime=time.time()-start_time
@@ -239,7 +240,7 @@ print(begin,"\n","-" * (Fspace + Dspace * nsnipets +Sspace))
 
 #labels = f"{'Frequencies':<{Fspace}}{'Document':<{Dspace}}{'Snippet':<{Sspace}}\n{'-----------':<{Fspace}}{'-'*41} {'-'*59}"
 #print(labels)
-
+candidates.sort(key=lambda x: x[0],reverse=True)
 
 #print("here",candidates[0][2])
 for i in range(len(candidates)):
