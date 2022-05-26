@@ -240,13 +240,13 @@ candidates.sort(key=lambda x: x[0],reverse=True)
 #print("here",candidates[0][2])
 
 
-with open('somefile2.txt', 'a',encoding="utf-8") as the_file:
+#with open('somefile2.txt', 'a',encoding="utf-8") as the_file:
 
-    for i in range(len(candidates)):
-        line=str(candidates[i][0])+" "+str(candidates[i][1]) + str(candidates[i][2])
-        #line = f"{candidates[i][0]:<{Fspace}}{candidates[i][1]:{Dspace}}"
-        # for j in range(len(candidates[i][2])):
-        #     line += f"{candidates[i][2][j]:<{Sspace}}"
-        # print(line)
-        the_file.write(line+"\n")
-        print("to",line)
+for i in range(len(candidates)):
+    line=str(candidates[i][0])+" "+str(candidates[i][1]) + str(candidates[i][2])
+    #line = f"{candidates[i][0]:<{Fspace}}{candidates[i][1]:{Dspace}}"
+    # for j in range(len(candidates[i][2])):
+    #     line += f"{candidates[i][2][j]:<{Sspace}}"
+    # print(line)
+    #the_file.write(line+"\n")
+    print("to",line)
