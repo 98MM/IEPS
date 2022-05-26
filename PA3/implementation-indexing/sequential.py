@@ -1,5 +1,5 @@
 import os
-import sqlite3
+import sys
 import time
 import nltk
 from bs4 import BeautifulSoup
@@ -153,11 +153,17 @@ def find_snippets(txt, indices):
 
 root = os.path.join(os.path.dirname(__file__), 'PA3-data') # "C:\\Work\\Magisterij_1_leto\\2.semester\\ekstrakcijaSplet\\nal3\\PA3-data"
 stop_words_english = stopwords.words('english')
+query = sys.argv
+query.pop(0)
+query_string = ' '.join(query)
+print(f'Results  for a query: "{query_string}"\n')
+for i in range(len(query)):
+    query[i] = query[i].lower()
+    query[i] = query[i].translate(str.maketrans('', '', string.punctuation))
 
-query=["evidenca"]
-query=["sistem","spot"]
-query[0].lower()
-query[1].lower()
+#query=["sistem","spot"]
+#query[0].lower()
+#query[1].lower()
 
 print(f'Results  for a query: "{query}"\n')
 
@@ -171,6 +177,7 @@ for subdir, dirs, files in os.walk(root):
         domain = os.path.basename(os.path.normpath(subdir))
         docName=path.split("\\")[-1] #names of documents
         frequency=0
+        snippets = []
         with open(path, encoding='utf8') as fp:
             soup = BeautifulSoup(fp, 'html.parser')
             for script in soup(["script", "style"]):
@@ -180,29 +187,16 @@ for subdir, dirs, files in os.walk(root):
             textOG = ' '.join(text.split())
             tokensOG=word_tokenize(textOG)
 
-            #text = text.lower()
-            #tokens = word_tokenize(text)
-
             tokens = [(idx,token.lower()) for idx,token in enumerate(tokensOG) if not token in (stop_words_slovene or stop_words_english)]
-            #tokens = [t for t in tokens if not t[1] in stop_words_english]
-            # for token in tokens:
-            #     if token in query:
-            #         frequency+=1
-
             tokensQuery= [t for t in tokens if t[1] in query]
             frequency=len(tokensQuery)
             indices= [i for i,t in tokensQuery]
-            #if(frequency>0):
-                #snippets.append(find_snippets(textOG,indices))
-                #pass
+
             if len(indices) > 3:
                 ixs3 = [int(indices[0]), int(indices[int(len(indices) / 2)]), int(indices[-1])]
             else:
                 ixs3=indices
-            ixs3=indices
-
-            snippets = []
-            for iter,i in enumerate(indices):
+            for iter,i in enumerate(ixs3):
                 begin = max(i - 3,0)
                 end = i + 3
                 dolz=len(tokensOG)
@@ -243,10 +237,15 @@ print(begin,"\n","-" * (Fspace + Dspace * nsnipets +Sspace))
 candidates.sort(key=lambda x: x[0],reverse=True)
 
 #print("here",candidates[0][2])
-for i in range(len(candidates)):
-    line=str(candidates[i][0])+" "+str(candidates[i][1]) + str(candidates[i][2])
-    # line = f"{candidates[i][0]:<{Fspace}}{candidates[i][1]:{Dspace}}"
-    # for j in range(len(candidates[i][2])):
-    #     line += f"{candidates[i][2][j]:<{Sspace}}"
-    # print(line)
-    print("to",line)
+
+
+with open('somefile2.txt', 'a',encoding="utf-8") as the_file:
+
+    for i in range(len(candidates)):
+        line=str(candidates[i][0])+" "+str(candidates[i][1]) + str(candidates[i][2])
+        #line = f"{candidates[i][0]:<{Fspace}}{candidates[i][1]:{Dspace}}"
+        # for j in range(len(candidates[i][2])):
+        #     line += f"{candidates[i][2][j]:<{Sspace}}"
+        # print(line)
+        the_file.write(line+"\n")
+        print("to",line)
